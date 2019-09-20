@@ -8,7 +8,9 @@ M1 = [7 -2 -5
 N1 = [75
       10
        0];
+% Current vector
 I1 = M1\N1;
+% Solution
 S1 = I1(1);
 disp('S1 =')
 disp(S1)
