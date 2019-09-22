@@ -10,13 +10,15 @@ N1 = [40
        0
      -20];
 I1 = M1\N1;
-a1_1 = -I1(1)*40;
-a1_2 =  I1(3)*20;
-b1   =  8*(I1(1)-I1(2));
+% Anwser a)
+a1_1 = -abs(I1(1)*40); % Power associated with the 40 V source
+a1_2 = -abs(I1(3)*20); % Power associated with the 40 V source
 disp('a1_1 =')
 disp(a1_1)
 disp('a1_2 =')
 disp(a1_2)
+% Answer b)
+b1   =  8*(I1(1)-I1(2)); % Voltage v_0
 disp('b1 =')
 disp(b1)
 
@@ -30,10 +32,14 @@ N2 = [80
        0
        0];
 I2 = M2\N2;
-a2 = abs(-80*I2(1));
-b2 = 8*I2(3)^2;
+% Answer a)
+a2 = -abs(80*I2(1)); % Power delivered by the 80 source
+    % The answer can be positive, since the question already specifies the
+    % power as the "power delivered".
 disp('a2 =')
 disp(a2)
+%  Answer b)
+b2 = 8*I2(3)^2; % Power dissipated by 50 Ohm resistance
 disp('b2 =')
 disp(b2)
 
@@ -47,9 +53,10 @@ N3 = [50
        0
        0];
 I3 = M3\N3;
-S3 = 4*(I3(2)-I3(3))^2;
-disp('S3 =')
-disp(S3)
+% Answer for "power dissipated in the 4 Ohms resistor"
+A3 = 4*(I3(2)-I3(3))^2;
+disp('A3 =')
+disp(A3)
 
 %% Exemplo 4
 % Figure 4.25 - Nilsson 2015 - Electric Circuits (10e)
@@ -63,17 +70,4 @@ N4 = [50
 I4 = M4\N4;
 disp('I4 =')
 disp(I4)
-
-%% Exemplo 5
-% Assessment problems 4.12 - Nilsson 2015 - Electric Circuits (10e)
-disp('Exemplo 5')
-M5 = [2  4 -4
-     -2 -2  5
-      1 -1  0];
-N5 = [10
-       6
-       2];
-I5 = M5\N5;
-S5 = 1*I5(3)^2;
-disp('S5 =')
-disp(S5)
+ % There is no question in this last example
